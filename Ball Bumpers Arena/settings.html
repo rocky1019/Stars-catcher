@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Falling Stars Catcher ✨</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to top, #0d0d1a, #1a1a3d);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    #settings-page {
+      max-width: 400px;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 10px;
+      background: #ffcc00;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #ffaa00;
+    }
+  </style>
+</head>
+<body>
+  <div id="settings-page">
+    <h1>⚙️ Settings</h1>
+
+    <!-- Game Info -->
+    <section>
+      <h2>Game Info</h2>
+      <p>Catch falling stars to earn points! Avoid red meteors and keep your lives alive.</p>
+    </section>
+
+    <!-- Sound & Music -->
+    <section>
+      <h2>Audio Settings</h2>
+      <label>
+        <input type="checkbox" id="settings-music-toggle" checked>
+        Background Music
+      </label>
+      <br>
+      <label>
+        <input type="checkbox" id="settings-sfx-toggle" checked>
+        Sound Effects
+      </label>
+    </section>
+
+    <!-- Paid Features -->
+    <section>
+      <h2>Premium Features 💎</h2>
+      <ul>
+        <li>Ad-free gameplay</li>
+        <li>Exclusive basket skins</li>
+        <li>Special particle effects</li>
+        <li>Extra golden star bonuses</li>
+      </ul>
+      <button id="settings-buy-premium">Buy Premium</button>
+    </section>
+
+    <!-- About -->
+    <section>
+      <h2>About</h2>
+      <p>Falling Stars Catcher ✨ v1.0</p>
+      <p>Made with ❤️ by Synth Studio </p>
+    </section>
+
+    <!-- Back Button -->
+    <button id="settings-back-btn">⬅ Back</button>
+  </div>
+
+  <script>
+    const backBtn = document.getElementById("settings-back-btn");
+    backBtn.addEventListener("click", () => {
+      window.location.href = "balls.html"; // or your main game page
+    });
+
+    const musicToggle = document.getElementById("settings-music-toggle");
+    const sfxToggle = document.getElementById("settings-sfx-toggle");
+
+    // Save user preferences in localStorage
+    musicToggle.addEventListener("change", () => {
+      localStorage.setItem("musicEnabled", musicToggle.checked);
+    });
+
+    sfxToggle.addEventListener("change", () => {
+      localStorage.setItem("sfxEnabled", sfxToggle.checked);
+    });
+
+    const buyPremium = document.getElementById("settings-buy-premium");
+    buyPremium.addEventListener("click", () => {
+      alert("Premium purchase flow coming soon!");
+    });
+  </script>
+</body>
+</html>
+
