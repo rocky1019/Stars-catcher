@@ -39,17 +39,46 @@ body {
 }
 
 #start-screen h1 {
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 30px;
+  color: #ffcc00;
+  text-shadow: 0 0 15px #ffcc00, 0 0 30px #ff66cc;
+  animation: glow 2s infinite alternate;
+  z-index: 2;
 }
 
-#start-screen button, #game-over button {
-  padding: 12px 25px;
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff66cc; }
+  50% { text-shadow: 0 0 20px #ffcc00, 0 0 40px #ff66cc; }
+  100% { text-shadow: 0 0 15px #ffcc00, 0 0 30px #ff66cc; }
+}
+
+
+#start-btn {
+  background: linear-gradient(45deg, #ffcc00, #ffaa00, #ffdd33);
+  border: none;
+  padding: 15px 35px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ffcc00, 0 0 30px #ffaa00;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 2;
+}
+
+#start-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ffcc00, 0 0 50px #ffaa00;
+}
+
+#game-over button { 
+   padding: 12px 25px;
   font-size: 18px;
   border-radius: 8px;
   border: none;
   background: #ffcc00;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 #start-screen button:hover, #game-over button:hover {
