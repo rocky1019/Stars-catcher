@@ -201,3 +201,7 @@ basket.addEventListener("touchmove", (e)=>{
   basketX = Math.min(Math.max(touchX - basket.offsetWidth/2, 0), game.offsetWidth - basket.offsetWidth);
   basket.style.left = basketX + "px";
 });
+   const setingsbtn = document.getElementById("settings-btn");
+    setingsbtn.addEventListener("click", () => {
+      window.location.href = "settings.html"; // or your main game page
+    });
